@@ -9,9 +9,9 @@ func main() {
 		var first float64
 		var second float64
 		
-		fmt.Println("...WELCOME TO THE GOPHERS CALCULATOR...")
-		fmt.Println("...YOU MAY START YOUR CALCULATION PROCESS...")
-		fmt.Println("Enter number to be calculated: ")
+		fmt.Println("\033[36m...WELCOME TO THE GOPHERS CALCULATOR...\033[0m")
+		fmt.Println("\033[31m...YOU MAY START YOUR CALCULATION PROCESS...\033[0m")
+		fmt.Println("\033[32mEnter number to be calculated:\033[0m")
 
 		if _, err := fmt.Scan(&first); err != nil {
 			fmt.Println("...Invalid input for first number...")
@@ -19,7 +19,7 @@ func main() {
 		}
 
 		fmt.Println("Select Arithmetic Operator: ")
-		var Operators string = ("1: +| 2: -| 3: *| 4: /| 5: Exit| 6: Help : ")
+		var Operators string = ("1: +| 2: -| 3: *| 4: /| 5: Exit| 6: Help :")
 		fmt.Println(Operators)
 		fmt.Scan(&Operators)
 
