@@ -6,11 +6,12 @@ import (
 
 func main() {
 	for {
-		fmt.Println("...WELCOME TO THE CLI CALC...")
-		fmt.Println("Enter number to be calculated: ")
-
 		var first float64
 		var second float64
+		
+		fmt.Println("...WELCOME TO THE GOPHERS CALCULATOR...")
+		fmt.Println("...YOU MAY START YOUR CALCULATION PROCESS...")
+		fmt.Println("Enter number to be calculated: ")
 
 		if _, err := fmt.Scan(&first); err != nil {
 			fmt.Println("...Invalid input for first number...")
@@ -18,9 +19,14 @@ func main() {
 		}
 
 		fmt.Println("Select Arithmetic Operator: ")
-		var Operators string = "(+, -, *, /)"
+		var Operators string = "(+, -, *, /, exit): "
 		fmt.Println(Operators)
 		fmt.Scan(&Operators)
+		
+		if Operators == "exit" {
+			fmt.Println("Goodbye...")
+			break
+		}
 
 		fmt.Println("Enter second number: ")
 		if _, err := fmt.Scan(&second); err != nil {
