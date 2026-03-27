@@ -35,7 +35,7 @@ func main() {
 			fmt.Println("Goodbye...")
 			break
 		}
-		if Operators != "+" &&  Operators != "-" && Operators != "*" && Operators != "/" {
+		if Operators != "1" &&  Operators != "2" && Operators != "3" && Operators != "4" {
 			fmt.Println("...Not a valid operator...")
 			fmt.Println("...Try using Help operation...")
 			continue
