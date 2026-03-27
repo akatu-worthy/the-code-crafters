@@ -13,7 +13,7 @@ func main() {
 		var second float64
 
 		if _, err := fmt.Scan(&first); err != nil {
-			fmt.Println("❌ Invalid input for first number")
+			fmt.Println("...Invalid input for first number...")
 			continue
 		}
 
@@ -24,7 +24,7 @@ func main() {
 
 		fmt.Println("Enter second number: ")
 		if _, err := fmt.Scan(&second); err != nil {
-			fmt.Println("❌ Invalid input for second number")
+			fmt.Println("...Invalid input for second number...")
 			continue
 		}
 
@@ -43,13 +43,13 @@ func main() {
 
 		case "/":
 			if second == 0 {
-				fmt.Println("❌ Cannot divide by zero")
+				fmt.Println("...Cannot divide by zero...")
 			} else {
 				fmt.Println(first / second)
 			}
 
 		default:
-			fmt.Println("❌ Invalid operator")
+			fmt.Println("...Invalid operator...")
 		}
 
 		continue
