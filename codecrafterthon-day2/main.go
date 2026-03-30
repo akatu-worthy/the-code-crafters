@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
- var input string
+	for {
+		var input string
  var base int
 
  fmt.Println("\033[36mNumber Base Converter\033[0m")
@@ -15,6 +16,7 @@ func main() {
  fmt.Println("\033[36m1 = Binary\033[0m")
  fmt.Println("\033[36m2 = Decimal\033[0m")
  fmt.Println("\033[36m3 = Hexadecimal\033[0m")
+ fmt.Println("\033[36m4 = Quit\033[0m")
 
  fmt.Print("\033[36mEnter choice:\033[0m ")
  fmt.Scan(&base)
@@ -25,7 +27,7 @@ func main() {
 
  if input == "" {
   fmt.Println("\033[31mError: Input cannot be empty\033[0m")
-  return
+  continue
  }
 
 
@@ -35,7 +37,7 @@ func main() {
 	for _, ch := range input {
    if ch != '0' && ch != '1' {
     fmt.Println("\033[31mError: Invalid binary number\033[0m")
-    return
+    continue
    }
   }
  case 2:
@@ -46,7 +48,7 @@ func main() {
   for _, ch := range input {
    if ch < '0' || ch > '9' {
     fmt.Println("\033[31mError: Invalid decimal number\033[0m")
-    return
+    continue
    }
   }
  case 3:
@@ -56,12 +58,18 @@ func main() {
     ch >= 'a' && ch <= 'f' ||
     ch >= 'A' && ch <= 'F') {
     fmt.Println("\033[31mError: Invalid hexadecimal number\033[0m")
-    return
+    continue
    }
   }
+case 4:
+	if input == "4" {
+	fmt.Println("\033[32mGoodbye...\033[0m")
+	return
+ }
+
  default:
   fmt.Println("\033[31mInvalid base choice\033[0m")
-  return
+  continue
  }
 
  var decimal int64
@@ -80,11 +88,14 @@ case 3:
 
  if err != nil {
   fmt.Println("\033[31mError:\033[0m", err)
-  return
+  continue
  }
 
  fmt.Println("Conversions:")
  fmt.Println("\033[32mBinary:\033[0m ", strconv.FormatInt(decimal, 2))
  fmt.Println("\033[32mDecimal:\033[0m ", strconv.FormatInt(decimal, 10))
  fmt.Println("\033[32mHexadecimal:\033[0m ", strconv.FormatInt(decimal, 16))
+
+ continue
+	}
 }
