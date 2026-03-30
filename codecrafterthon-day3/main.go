@@ -1,3 +1,8 @@
+// CodeCrafters — Operation Gopher Protocol
+       // Module: String Transformer
+       // Author: Akatu Worthy
+       // Squad:  The Gopher's
+
 package main
 
 import (
